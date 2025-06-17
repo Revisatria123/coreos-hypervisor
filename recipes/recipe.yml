@@ -18,17 +18,18 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: dnf
-    remove:
-      - NetworkManager-wifi
-      - atheros-firmware
-      - brcmfmac-firmware
-      - iwlegacy-firmware
-      - iwlwifi-dvm-firmware
-      - iwlwifi-mvm-firmware
-      - mt7xxx-firmware
-      - nxpwireless-firmware
-      - realtek-firmware
-      - tiwilink-firmware
+    group-remove:
+      packages:
+        - NetworkManager-wifi
+        - atheros-firmware
+        - brcmfmac-firmware
+        - iwlegacy-firmware
+        - iwlwifi-dvm-firmware
+        - iwlwifi-mvm-firmware
+        - mt7xxx-firmware
+        - nxpwireless-firmware
+        - realtek-firmware
+        - tiwilink-firmware
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
